@@ -6,7 +6,12 @@
     "margin-right": 5,
     "height": 40, 
     "layer": "top",
-    "modules-left": ["custom/launcher", "hyprland/window", "custom/media","group/power"],
+    "modules-left": [
+      "custom/launcher",
+      "hyprland/window",
+      "group/power",
+      "mpris"
+    ],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": [
         "group/hwmon",
@@ -41,6 +46,21 @@
         "cpu",
         "memory"
       ]
+    },
+    "mpris": {
+      "interval": 1,
+      "format": "{player_icon} {dynamic} {status_icon}",
+      "status-icons": {
+        "paused": "",
+        "playing": ""
+      },
+      "player-icons":{
+        "brave": " ",
+        "firefox": " ",
+        "spotify": " "
+      },
+      "dynamic-len":50,
+      "ellipsis": ""
     },
     "power-profiles-daemon": {
       "format": "{icon}",

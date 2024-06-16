@@ -62,7 +62,7 @@ window#waybar.hidden {
 #clock {
   color: @color9;
 }
-
+                    
 #window {
   color: @color11;
   margin-left: 15px;
@@ -82,10 +82,6 @@ window#waybar.hidden {
 
 #battery {
   color: @color10;
-  /*margin: 5px 0;*/
-  /*background-color: rgba(49, 76, 74, 0.3);*/
-  /*border-radius: 20px;*/
-  /*padding: 0 7px;*/
 }
 
 #power {
@@ -106,18 +102,8 @@ window#waybar.hidden {
 #cpu,
 #memory {
   margin: 0 5px;
-  color: @color10;
+  color: @color11;
 }
-
-/*#cpu.high{*/
-/* color: red; */
-/*}*/
-/*#cpu.avg{*/
-/* color: blue; */
-/*}*/
-/*#cpu.low{*/
-/*  color: green;*/
-/*}*/
 
 #bluetooth,
 #network,
@@ -167,26 +153,16 @@ window#waybar.hidden {
   background-color: #eb4d4b;
 }
 
-#custom-media {
-  color: @color10;
+#mpris {
+  color: @color13;
   background-color: rgba(49, 76, 74, 0.3);
   border-radius: 20px;
-  padding: 0 3px;
+  padding: 0 10px;
   margin: 5px 3px;
 }
 
-#custom-media:hover {
+#mpris:hover {
   color: rgba(217, 217, 217, 1);
-}
-
-#custom-wallpaper {
-  padding: 0 18px 0 12px;
-  color: @color14;
-}
-
-#custom-theme {
-  padding: 0 18px 0 12px;
-  color: @color13;
 }
 
 @keyframes blink {
@@ -199,14 +175,14 @@ window#waybar.hidden {
 tooltip {
   border-radius: 15px;
   padding: 15px;
-  background-color: @background;
-  color: @foreground;
+  background-color: alpha(@theme_base_color,0.8);
+  color: white;
   font-family: RecMonoDuotone Nerd Font;
 }
 
 tooltip label {
   padding: 5px;
-  color: @foreground;
+  color: white;
 }
 
 label:focus {
