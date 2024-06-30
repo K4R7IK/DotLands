@@ -70,7 +70,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo zsh-vi-mode)
+plugins=(git sudo zsh-vi-mode extract)
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
