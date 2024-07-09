@@ -166,8 +166,9 @@
         "format": "{icon}",
         "tooltip-format": "{percent}",
         "format-icons": ["󱩎 ", "󱩏 ", "󱩐 ", "󱩑 ", "󱩒 ", "󱩓 ", "󱩔 ", "󱩕 ", "󱩖 ", "󰛨 "],
-        "on-scroll-up": "~/.config/waybar/scripts/brightness.sh --inc",
-        "on-scroll-down": "~/.config/waybar/scripts/brightness.sh --dec"
+        "on-scroll-down": "brightnessctl s 2%-",
+        "on-scroll-up": "brightnessctl s +2%"
+
     },
     "network": {
         "format-wifi": "{icon}",
