@@ -35,7 +35,7 @@ format = ' [$duration](bold yellow)'
 
 [directory]
 truncation_length = 5
-format = '[$path]($style)[$read_only]($read_only_style)'
+format = '[$path]($style)[$read_only]($read_only_style) '
 read_only = ' '
 
 [directory.substitutions]

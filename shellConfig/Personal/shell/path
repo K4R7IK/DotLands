@@ -12,6 +12,7 @@ pathList=(
   "$HOME/Personal/bin/"
   "$BUN_INSTALL/bin"
   "$HOME/.cargo/bin"
+  "$HOME/.local/share/pnpm"
 )
 
 for i in "${pathList[@]}"

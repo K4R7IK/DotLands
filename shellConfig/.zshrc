@@ -95,3 +95,15 @@ if hash devexcuse 2>/dev/null; then
 fi
 
 export PATH=$PATH:/home/k4r7ik/.spicetify
+
+# pnpm
+export PNPM_HOME="/home/k4r7ik/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

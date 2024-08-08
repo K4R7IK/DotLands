@@ -9,8 +9,8 @@
     "modules-left": [
       "custom/launcher",
       "hyprland/window",
-      "group/power",
-      "mpris"
+      "group/power"
+//      "mpris"
     ],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": [
@@ -125,8 +125,9 @@
     "hyprland/window": {
       "format": "{initialTitle}",
       "rewrite": {
-        "Mozilla Firefox": "Firefox",
-        "Untitled - Brave": "Brave",
+        "(.*)Mozilla Firefox": "Firefox",
+        "(.*)Brave": "Brave",
+        "(.*)Discord": "Discord",
         "": "K4R7IK"
       },
       "seprate-outputs": true
