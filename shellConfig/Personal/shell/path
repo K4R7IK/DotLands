@@ -1,11 +1,40 @@
 # vim: ft=sh
 
-[ -d "$HOME/go" ] && export GOPATH="$HOME/go"
-[ -d "$HOME/.bun" ] && export BUN_INSTALL="$HOME/.bun"
-[ -s "/home/k4r7ik/.bun/_bun" ] && source "/home/k4r7ik/.bun/_bun"
+# [ -d "$HOME/go" ] && export GOPATH="$HOME/go"
+# [ -d "/usr/local/go" ] && export GOROOT="/usr/local/go"
+# [ -d "$HOME/.bun" ] && export BUN_INSTALL="$HOME/.bun"
+# [ -s "/home/k4r7ik/.bun/_bun" ] && source "/home/k4r7ik/.bun/_bun"
+#
+# pathList=(
+#   "$GOPATH/bin"
+#   "$GOROOT/bin"
+#   "$HOME/.npm/bin"
+#   "$HOME/.npm-global/bin"
+#   "$HOME/.local/bin"
+#   "$HOME/Personal/bin/"
+#   "$BUN_INSTALL/bin"
+#   "$HOME/.cargo/bin"
+#   "$HOME/.local/share/pnpm"
+# )
+#
+# for i in "${pathList[@]}"
+# do
+#   if [ -d $i ] && [[ ":$PATH:" != *":$i:"* ]]; then
+#     export PATH="${PATH:+"$PATH:"}$i"
+#   fi
+# done
 
+# Environment variables for tools
+[ -d "$HOME/go" ] && export GOPATH="$HOME/go"
+[ -d "/usr/local/go" ] && export GOROOT="/usr/local/go"
+[ -d "$HOME/.bun" ] && export BUN_INSTALL="$HOME/.bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+[ -d "$HOME/.pyenv" ] && export PYENV_ROOT="$HOME/.pyenv"
+
+# List of paths to be added to PATH
 pathList=(
   "$GOPATH/bin"
+  "$GOROOT/bin"
   "$HOME/.npm/bin"
   "$HOME/.npm-global/bin"
   "$HOME/.local/bin"
@@ -13,11 +42,15 @@ pathList=(
   "$BUN_INSTALL/bin"
   "$HOME/.cargo/bin"
   "$HOME/.local/share/pnpm"
+  "$PYENV_ROOT/bin"
 )
 
-for i in "${pathList[@]}"
-do
-  if [ -d $i ] && [[ ":$PATH:" != *":$i:"* ]]; then
-    export PATH="${PATH:+"$PATH:"}$i"
+# Add valid directories to PATH without duplicates
+newPaths=""
+for i in "${pathList[@]}"; do
+  if [ -d "$i" ] && [[ ":$PATH:" != *":$i:"* ]]; then
+    newPaths="${newPaths:+$newPaths:}$i"
   fi
 done
+export PATH="$newPaths:$PATH"
+

@@ -94,16 +94,22 @@ if hash devexcuse 2>/dev/null; then
   devexcuse
 fi
 
-export PATH=$PATH:/home/k4r7ik/.spicetify
-
 # pnpm
-export PNPM_HOME="/home/k4r7ik/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+# export PNPM_HOME="/home/k4r7ik/.local/share/pnpm"
 # pnpm end
+ 
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
 
+[ -d "$PYENV_ROOT" ] && eval "$(pyenv init - zsh)"
+# Golang vars
+# export GOROOT=/usr/local/go
+# export GOPATH=$HOME/go
+# export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+# Golang environment variables
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
