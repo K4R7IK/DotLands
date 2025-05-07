@@ -42,6 +42,7 @@ pathList=(
   "$BUN_INSTALL/bin"
   "$HOME/.cargo/bin"
   "$HOME/.local/share/pnpm"
+  "$HOME/.local/bin"
   "$PYENV_ROOT/bin"
 )
 
@@ -53,4 +54,3 @@ for i in "${pathList[@]}"; do
   fi
 done
 export PATH="$newPaths:$PATH"
-
